@@ -1,161 +1,231 @@
 # C-OOPs
-C++ OOP practice projects — parking lot system &amp; RPG battle system
-<br>
-🚗 1. Parking Lot Management System
+# C++ OOP Projects
 
-A console-based parking lot management system that manages different types of vehicles and parking spots.
-<br>
-Features
-Park vehicles in available parking spots
-Support for:
-🏍️ Bike
-🚗 Car
-🚚 Truck
-Different parking spot sizes:
-Small
-Medium
-Large
-Automatically records vehicle entry time
-Calculates parking fees based on parking duration
-Unpark/checkout vehicles
-Display current parking lot occupancy
-Input validation for invalid user input
-Automatic memory management using unique_ptr
-OOP Concepts Used
-Classes and Objects
-Encapsulation
-Inheritance
-Runtime Polymorphism
-Pure Virtual Functions
-Abstract Classes
-Virtual Destructor
-Function Overriding
-enum class
-Composition
-Friend Classes
-Smart Pointers (unique_ptr)
-RAII
-Move Semantics (std::move)
-Constructors
-STL vector
+A collection of C++ Object-Oriented Programming projects created to learn and apply core OOP concepts through practical applications.
 
-The vehicle hierarchy uses an abstract Vechile base class with Bike, Car, and Truck derived classes. Each derived class provides its own implementation of fee calculation and vehicle size.
+## 📁 Project Structure
 
-Example Hierarchy
-                 Vechile
-                /   |   \
-               /    |    \
-            Bike   Car   Truck
+C-OOPs/
+├── parking-lot-system/
+│   └── main.cpp
+├── rpg-battle-system/
+│   └── main.cpp
+└── README.md
 
-The parking manager owns the vehicles through:
+---
 
-vector<unique_ptr<Vechile>> parkedvechiles;
+## 🚗 1. Parking Lot Management System
 
-while parking spots maintain non-owning pointers to the vehicles.
+A console-based parking lot management system built using C++.
 
-⚔️ 2. RPG Battle System
+The system manages different types of vehicles and parking spots while demonstrating important Object-Oriented Programming concepts.
 
-A console-based RPG combat system demonstrating inheritance and runtime polymorphism.
+### Features
 
-Features
-Multiple character classes
-Warrior character with different attack characteristics
-Blackwoman character with different attack characteristics
-Health and stamina management
-Configurable attack power
-Stamina consumption per attack
-Stamina regeneration
-Damage calculation
-Character defeat detection
-Turn-based combat
-Input validation
-OOP Concepts Used
-Classes and Objects
-Inheritance
-Runtime Polymorphism
-Abstract Classes
-Pure Virtual Functions
-Virtual Functions
-Function Overriding
-Virtual Destructor
-Encapsulation
-Smart Pointers (unique_ptr)
-RAII
-References
-STL
+- Park a vehicle
+- Unpark / checkout a vehicle
+- Display parking lot occupancy
+- Supports different vehicle types:
+  - Bike
+  - Car
+  - Truck
+- Supports different parking spot sizes:
+  - Small
+  - Medium
+  - Large
+- Automatically records vehicle entry time
+- Calculates parking fees based on parking duration
+- Validates user input
+- Automatic memory management using smart pointers
 
-The Character class acts as an abstract base class, while Warrior and Blackwoman provide their own implementations of the virtual attack() function.
+### OOP Concepts Used
 
-Example Hierarchy
-              Character
-              /       \
-             /         \
-        Warrior      Blackwoman
+- Classes and Objects
+- Encapsulation
+- Inheritance
+- Abstraction
+- Runtime Polymorphism
+- Pure Virtual Functions
+- Virtual Functions
+- Virtual Destructor
+- Function Overriding
+- `enum class`
+- Friend Classes
+- `unique_ptr`
+- RAII
+- Move Semantics
+- STL `vector`
+- Constructors and Destructors
 
-The game uses unique_ptr<Character> to manage the lifetime of derived character objects.
+### Class Hierarchy
 
-🧠 OOP Concepts Covered
-Concept	Parking Lot	RPG Battle
-Classes & Objects	✅	✅
-Encapsulation	✅	✅
-Inheritance	✅	✅
-Runtime Polymorphism	✅	✅
-Abstract Classes	✅	✅
-Pure Virtual Functions	✅	✅
-Virtual Destructor	✅	✅
-Function Overriding	✅	✅
-enum class	✅	—
-Friend Class	✅	—
-unique_ptr	✅	✅
-RAII	✅	✅
-std::move	✅	—
-STL vector	✅	—
-Constructors	✅	✅
-References	—	✅
-🛠️ Requirements
-C++11 or later
-A C++ compiler such as:
-GCC
-Clang
-MSVC
+    Vechile
+       |
+    +--+--+
+    |  |  |
+    Bike Car Truck
 
-The projects use modern C++ features such as unique_ptr and make_unique, so C++14 or later is recommended.
+`Vechile` acts as the abstract base class, while `Bike`, `Car`, and `Truck` are derived classes.
 
-▶️ How to Run
+---
 
-Clone the repository:
+## ⚔️ 2. RPG Battle System
 
-git clone <your-repository-url>
-cd C-OOPs
-Parking Lot
-cd parking-lot-system
-g++ -std=c++14 main.cpp -o parking
-./parking
-RPG Battle
-cd ../rpg-battle-system
-g++ -std=c++14 main.cpp -o rpg
-./rpg
-🎯 Purpose
+A console-based turn-based RPG battle system designed to demonstrate inheritance, abstraction, and runtime polymorphism in C++.
 
-These projects were created to move beyond learning OOP concepts theoretically and apply them to real-world and interactive C++ applications.
+### Features
 
-The goal is to build a strong understanding of:
+- Turn-based combat
+- Multiple character types
+- Warrior character
+- Blackwoman character
+- Health management
+- Stamina management
+- Attack power system
+- Stamina consumption
+- Stamina regeneration
+- Damage calculation
+- Character defeat detection
+- Input validation
 
-OOP Fundamentals
-       ↓
-Inheritance
-       ↓
-Polymorphism
-       ↓
-Abstract Classes
-       ↓
-Smart Pointers
-       ↓
-RAII & Memory Management
-       ↓
-Practical C++ Design
-👩‍💻 Author
+### OOP Concepts Used
 
-Shreya Johari
+- Classes and Objects
+- Encapsulation
+- Inheritance
+- Abstraction
+- Runtime Polymorphism
+- Abstract Classes
+- Pure Virtual Functions
+- Virtual Functions
+- Function Overriding
+- Virtual Destructor
+- Smart Pointers (`unique_ptr`)
+- RAII
+- References
+- STL
 
-A collection of C++ OOP projects created for learning, practice, and building a stronger foundation in modern C++.
+### Class Hierarchy
+
+    Character
+       |
+    +--+--+
+    |     |
+    Warrior  Blackwoman
+
+`Character` is an abstract base class with a pure virtual `attack()` function. The derived classes provide their own implementations of the attack behavior.
+
+---
+
+## 🧠 Concepts Practiced
+
+| OOP Concept | Parking Lot | RPG Battle |
+|-------------|:-----------:|:----------:|
+| Classes & Objects | ✅ | ✅ |
+| Encapsulation | ✅ | ✅ |
+| Inheritance | ✅ | ✅ |
+| Abstraction | ✅ | ✅ |
+| Runtime Polymorphism | ✅ | ✅ |
+| Abstract Classes | ✅ | ✅ |
+| Pure Virtual Functions | ✅ | ✅ |
+| Virtual Functions | ✅ | ✅ |
+| Virtual Destructor | ✅ | ✅ |
+| Function Overriding | ✅ | ✅ |
+| `enum class` | ✅ | ❌ |
+| Friend Class | ✅ | ❌ |
+| `unique_ptr` | ✅ | ✅ |
+| RAII | ✅ | ✅ |
+| Move Semantics | ✅ | ❌ |
+| STL `vector` | ✅ | ❌ |
+| Constructors | ✅ | ✅ |
+| References | ❌ | ✅ |
+
+---
+
+## 🛠️ Requirements
+
+- C++14 or later
+- GCC / MinGW
+- Clang
+- MSVC
+- Any C++ compatible IDE
+
+---
+
+## ▶️ How to Run
+
+### Clone the Repository
+
+    git clone <your-repository-url>
+    cd C-OOPs
+
+### Run Parking Lot System
+
+    cd parking-lot-system
+    g++ -std=c++14 main.cpp -o parking
+    ./parking
+
+### Run RPG Battle System
+
+    cd rpg-battle-system
+    g++ -std=c++14 main.cpp -o rpg
+    ./rpg
+
+### Windows
+
+Using MinGW:
+
+    g++ -std=c++14 main.cpp -o parking.exe
+    parking.exe
+
+---
+
+## 🎯 Learning Goals
+
+The purpose of these projects is to understand OOP concepts by implementing them in practical systems.
+
+The projects provide hands-on practice with:
+
+- Classes and Objects
+- Encapsulation
+- Inheritance
+- Abstraction
+- Polymorphism
+- Smart Pointers
+- RAII
+- Modern C++
+
+---
+
+## 📌 Projects
+
+### Parking Lot System
+
+Focuses on:
+
+- Object relationships
+- Inheritance
+- Vehicle and parking spot management
+- Runtime polymorphism
+- Smart pointer based ownership
+- Resource management
+
+### RPG Battle System
+
+Focuses on:
+
+- Abstract classes
+- Inheritance
+- Runtime polymorphism
+- Virtual functions
+- Character behavior
+- Smart pointer based object management
+
+---
+
+## 👨‍💻 Author
+
+**Shreya Johari**
+
+Built as part of learning and practicing C++ Object-Oriented Programming.
+
